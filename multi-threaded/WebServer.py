@@ -6,7 +6,8 @@ def handleClient(connectionSocket):
 		message = connectionSocket.recv(1024).decode() # decode msg from bytes to string
 		filename = message.split("\r\n")[0].split()[1] # get the first line of response and extract filename         
 		
-		print(filename)
+		if filename == '/':
+			filename = '/HelloWorld.html'
 
 		with open(".." + filename) as f:               
 			outputdata = f.read()

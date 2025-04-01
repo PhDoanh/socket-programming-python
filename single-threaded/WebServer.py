@@ -14,7 +14,11 @@ while True:
 	connectionSocket, addr = serverSocket.accept()
 	try:
 		message = connectionSocket.recv(1024).decode()
-		filename = message.split("\r\n")[0].split()[1]                  
+		filename = message.split("\r\n")[0].split()[1]        
+
+		if filename == '/':
+			filename = '/HelloWorld.html'
+
 		f = open(".." + filename)                         
 		outputdata = f.readlines()
 

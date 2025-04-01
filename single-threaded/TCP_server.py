@@ -9,9 +9,9 @@ print('The server is ready to receive')
 
 while True:
     connectionSocket, addr = serverSocket.accept()
-    print("Connection from", addr)
+    # print("Connection from", addr)
     clientName = connectionSocket.recv(1024).decode().strip()
-    print(f"{clientName} is connected")
+    # print(f"{clientName} is connected")
 
     while True:
         try:
